@@ -82,34 +82,80 @@ export default function Home() {
       </header>
 
       {/* 1. SEÇÃO PRINCIPAL (HERO) */}
-      <header className="max-w-4xl mx-auto px-4 pt-12 pb-8 text-center space-y-6">
-        <span className="inline-block bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-2 rounded-lg">
-          Receitas Tradicionais da Família
-        </span>
-        
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-          128 Receitas Secretas de Raizes do Bem para Conquistar Sua Família
-        </h1>
-        
-        <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          Receitas tradicionais de vó, bolos fofinhos, almoços inesquecíveis e doces caseiros. Tudo reunido em um manual digital simples e prático.
-        </p>
+      <header className="max-w-6xl mx-auto px-4 pt-12 pb-8">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="text-center md:text-left space-y-6 order-2 md:order-1">
+            <span className="inline-block bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-2 rounded-lg">
+              Receitas Tradicionais da Família
+            </span>
 
-        {/* FOTO DA DONA ROSA */}
-        <div className="w-full max-w-lg mx-auto pt-4">
-          <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white relative aspect-[4/3]">
-            <Image
-              src="/dona-rosa-photo.webp"
-              alt="Dona Rosa na sua cozinha"
-              fill
-              priority
-              sizes="(max-width: 640px) 100vw, 512px"
-              className="object-cover"
-            />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 leading-tight">
+              Volte a sentir o sabor da comida de vó, <span className="text-amber-600">feita com amor de verdade</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
+              128 receitas tradicionais da Dona Rosa: bolos fofinhos, almoços inesquecíveis e doces caseiros, reunidos em um e-book simples e prático.
+            </p>
+
+            <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-sm text-slate-600 font-medium">
+              <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600" /> 128 receitas</span>
+              <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600" /> Passo a passo</span>
+              <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600" /> Acesso imediato</span>
+            </div>
+
+            <div className="max-w-sm mx-auto md:mx-0">
+              <a 
+                href={LINK_KIWIFY}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-3 w-full"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'click_botao_compra', { localizacao_botao: 'topo' });
+                  }
+                }}
+              >
+                <ShoppingCart className="w-5 h-5" />
+                Quero Meu E-book Agora
+              </a>
+              <div className="mt-4 space-y-2">
+                <span className="text-sm text-slate-600 flex items-center justify-center md:justify-start gap-1">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> Acesso imediato no seu e-mail
+                </span>
+                <div className="flex items-center justify-center md:justify-start gap-4 text-xs text-slate-500">
+                  <span className="flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Compra Segura
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 7 Dias de Garantia
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-slate-500 text-sm italic pt-3">Dona Rosa, na cozinha onde tudo começou</p>
-        </div>
 
+          {/* FOTO DA DONA ROSA */}
+          <div className="order-1 md:order-2">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative aspect-[4/5] md:aspect-[4/4.5] bg-amber-50">
+              <Image
+                src="/dona-rosa-photo.webp"
+                alt="Dona Rosa na sua cozinha"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 576px"
+                className="object-cover"
+              />
+              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-xl px-4 py-3 shadow-md">
+                <p className="text-slate-800 text-sm font-semibold">Dona Rosa</p>
+                <p className="text-slate-500 text-xs italic">Na cozinha onde tudo começou, há mais de 40 anos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* MOCKUP DO LIVRO E OFERTA */}
+      <section className="max-w-4xl mx-auto px-4 pt-8 pb-8 text-center space-y-6">
         {/* MOCKUP DO LIVRO */}
         <div className="w-full max-w-md mx-auto pt-4">
           <div className="bg-white rounded-2xl p-4 shadow-xl border border-amber-100/50 relative">
@@ -128,37 +174,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* BOTÃO PRINCIPAL DE COMPRA */}
-        <div className="pt-6 max-w-sm mx-auto">
-          <a 
-            href={LINK_KIWIFY}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-3 w-full"
-            onClick={() => {
-              if (typeof window !== 'undefined' && window.gtag) {
-                window.gtag('event', 'click_botao_compra', { localizacao_botao: 'topo' });
-              }
-            }}
-          >
-            <ShoppingCart className="w-5 h-5" />
-            Quero Meu E-book Agora
-          </a>
-          <div className="mt-4 space-y-2">
-            <span className="text-sm text-slate-600 block flex items-center justify-center gap-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Acesso imediato no seu e-mail
-            </span>
-            <div className="flex items-center justify-center gap-4 text-xs text-slate-500">
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Compra Segura
-              </span>
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 7 Dias de Garantia
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
+      </section>
 
       {/* VÍDEO */}
       <section className="max-w-sm mx-auto px-4 py-12">
