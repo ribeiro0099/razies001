@@ -95,6 +95,21 @@ export default function Home() {
           Receitas tradicionais de vó, bolos fofinhos, almoços inesquecíveis e doces caseiros. Tudo reunido em um manual digital simples e prático.
         </p>
 
+        {/* FOTO DA DONA ROSA */}
+        <div className="w-full max-w-lg mx-auto pt-4">
+          <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white relative aspect-[4/3]">
+            <Image
+              src="/dona-rosa-photo.webp"
+              alt="Dona Rosa na sua cozinha"
+              fill
+              priority
+              sizes="(max-width: 640px) 100vw, 512px"
+              className="object-cover"
+            />
+          </div>
+          <p className="text-slate-500 text-sm italic pt-3">Dona Rosa, na cozinha onde tudo começou</p>
+        </div>
+
         {/* MOCKUP DO LIVRO */}
         <div className="w-full max-w-md mx-auto pt-4">
           <div className="bg-white rounded-2xl p-4 shadow-xl border border-amber-100/50 relative">
@@ -202,26 +217,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOBRE A AUTORA */}
+      {/* A HISTÓRIA DA DONA ROSA */}
       <section className="max-w-2xl mx-auto px-4 py-10">
-        <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6 md:p-8">
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            <div className="shrink-0">
-              <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-emerald-100 shadow-md relative">
-                <Image 
-                  src="/dona-rosa-photo.webp" 
-                  alt="Raizes do Bem" 
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="text-center md:text-left">
-              <h2 className="text-xl font-bold text-slate-900 mb-2">Quem é Raizes do Bem?</h2>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Com mais de 40 anos de experiência na cozinha, Raizes do Bem reuniu neste e-book as receitas que passaram de geração em geração na sua família. O que começou como cadernos de anotações virou este tesouro de 128 receitas testadas e aprovadas por quem mais entende de comida com amor.
-              </p>
-            </div>
+        <div className="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+          <div className="relative aspect-[4/3] w-full">
+            <Image
+              src="/dona-rosa-photo.webp"
+              alt="Dona Rosa, autora do e-book 128 Receitas de Vó"
+              fill
+              sizes="(max-width: 640px) 100vw, 672px"
+              className="object-cover"
+            />
+          </div>
+          <div className="p-6 md:p-8 space-y-4 text-center md:text-left">
+            <h2 className="text-2xl font-bold text-slate-900">A História da Dona Rosa</h2>
+            <p className="text-slate-600 leading-relaxed">
+              Com mais de 40 anos de experiência na cozinha, Dona Rosa é o coração do Raizes do Bem. Foi no fogão da sua casa, cozinhando para filhos e netos, que nasceram as receitas que hoje encantam milhares de famílias.
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              O que começou como cadernos de anotações, passados de geração em geração, virou este tesouro de 128 receitas testadas e aprovadas por quem mais entende de comida feita com amor. Cada página do e-book carrega um pedaço dessa história de vida.
+            </p>
           </div>
         </div>
       </section>
