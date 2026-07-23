@@ -146,14 +146,16 @@ export default function Home() {
       </header>
 
       {/* VÍDEO */}
-      <section className="max-w-2xl mx-auto px-4 py-12">
+      <section className="max-w-sm mx-auto px-4 py-12">
         <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
-          <div className="aspect-video bg-slate-900 relative">
+          <div className="aspect-[9/16] bg-slate-900 relative">
             <video 
               src="/dona-rosa-video.mp4" 
               controls 
+              playsInline
+              preload="none"
               className="w-full h-full object-cover"
-              poster="/dona-rosa-photo.jpeg"
+              poster="/dona-rosa-poster.webp"
             >
               Seu navegador não suporta vídeos.
             </video>
@@ -207,7 +209,7 @@ export default function Home() {
             <div className="shrink-0">
               <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-emerald-100 shadow-md relative">
                 <Image 
-                  src="/dona-rosa-photo.jpeg" 
+                  src="/dona-rosa-photo.webp" 
                   alt="Raizes do Bem" 
                   fill
                   className="object-cover"
